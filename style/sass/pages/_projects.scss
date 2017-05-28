@@ -1,0 +1,310 @@
+.project-intro {
+  @extend .intro;
+
+  &.partner-portal {
+    background: $blue url('../../img/projects/partner-portal/feature.png') no-repeat bottom;
+    background-size: contain;
+  }
+
+  &.onboarding {
+    background: $yellow url('../../img/projects/onboarding/feature.svg') no-repeat 100% 50%;
+    background-size: 100%;
+
+    h1 {color: $gray;}
+    .logo {
+      fill: $gray;
+    }
+  }
+
+  &.ibotta-web {
+    background: $pink url('../../img/projects/ibotta-web/feature-notes.png') no-repeat center;
+    background-size: cover;
+  }
+
+  &.ibotta-internal {
+    background: $blue-internal url('../../img/home_project_ibotta-internal.svg') 0% 10%;
+    background-size: 90%;
+  }
+
+  &.plink-analytics {
+    background: $red url('../../img/projects/plink-analytics/plinkanal_feature.png') no-repeat center;
+    background-size: 33%;
+
+    @media (max-width: $mobile) {
+      background-size: auto;
+    }
+  }
+
+  &.dsg {
+    background: url('../../img/projects/dsg/feature.jpg') no-repeat center;
+    background-size: cover;
+
+    h1 {
+      text-shadow: 0 1px 25px rgba(12,12,12,.8);
+    }
+  }
+}
+
+.project-details {
+  @include center-content();
+  display: flex;
+  flex-basis: 100%;
+  margin: $spacer*3 auto;
+
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+    padding: 0 $spacer*2;
+    margin: $spacer*3 auto $spacer*6;
+  }
+
+  @media (min-width: $width-lg){
+    padding: 0 $spacer*2.5;
+    margin: $spacer*2 auto;
+    max-width: none;
+  }
+
+  ul {
+    color: $gray;
+
+    &:first-of-type {
+      margin:0 $spacer*2 $spacer 0;
+      max-width: 60%;
+
+      @media (max-width: $mobile) {
+        margin: 0 0 $spacer*3;
+        max-width: none;
+      }
+    }
+
+    &:last-of-type {
+      flex-shrink: 0;
+    }
+  }
+
+  li {
+    color: $gray;
+    line-height: 150%;
+
+    @media (max-width: $mobile) {
+      font-size: 1.2em;
+      line-height: 125%;
+    }
+
+    &:first-child{
+      font-size: 1.2em;
+      font-weight: 500;
+      opacity: .4;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.benefit {
+  align-items: center;
+  display: flex;
+  flex: 1 0 100%;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: auto;
+  max-height: $benefit-max-height;
+  max-width: $width-lg;
+
+
+  .description, .img-container {
+    width: 50%;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $spacer;
+      width: 100%;
+    }
+  }
+
+  &.horizontal {
+    height: auto;
+    margin-bottom: $spacer*2;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $spacer*5;
+    }
+
+    .description, .img-container {
+      text-align: center;
+      width: 100%;
+
+      @media (max-width: $mobile) {
+        text-align: left;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    height: auto;
+    margin: $spacer auto $spacer*5;
+  }
+
+  @media (min-width: $width-lg){
+    max-height: 90vh;
+    max-width: none;
+    padding: $spacer*1.5;
+  }
+
+  .description {
+    padding: $spacer;
+
+    p {
+      margin-top: .4em;
+      font-weight: 300;
+    }
+
+    span {
+      color: $gray;
+      font-weight: 500;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacer $spacer*2;
+    }
+
+    @media (min-width: $width-lg){
+      font-size: 120%;
+    }
+
+    @media (min-width: $width-HD) {
+      font-size: 145%;
+    }
+  }
+
+  .img-container {
+    img {
+      display: block;
+      overflow: hidden;
+      margin: auto;
+      max-width: 100%;
+      max-height: $benefit-max-height;
+
+      @media (min-width: $width-lg) {
+        max-height: 90vh;
+      }
+    }
+  }
+
+  &.partner-portal {
+
+    &.bottleneck {
+      @include svg-benefit(70%, 10%);
+    }
+
+    &.content-approval, &.analytics, &.alerts {
+      @include right-align-benefit();
+    }
+
+    &.progress {
+      @include svg-benefit();
+    }
+  }
+
+  &.onboarding {
+    &.wireframe {
+      @include svg-benefit(80%, 10%);
+    }
+
+    &.result {
+      @include svg-benefit(60%, 20%);
+    }
+  }
+
+  &.ibotta-web {
+    &.roadblock, &.responsive, &.redesign {
+      @include right-align-benefit();
+    }
+  }
+
+  &.ibotta-internal {
+    &.poc, &.pattern {
+      @include right-align-benefit();
+    }
+
+    &.tools {
+      @include svg-benefit(90%, 5%);
+    }
+  }
+}
+
+.imgs-centered {
+  display: block;
+  margin: auto;
+  max-width: 876px;
+  width: 90%;
+
+  img {
+    margin: $spacer auto;
+    max-width: 100%;
+
+    &:last-of-type {
+      margin-bottom: $spacer*4;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &.dsg {
+    @media (max-width: $mobile) {
+      overflow: hidden;
+      padding: 0 5%;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: auto;
+
+      &:first-child {
+        margin-bottom: -25%;
+        margin-left: -10%;
+      }
+
+      &:nth-child(2) {
+        margin-left: 30%;
+      }
+
+      &:nth-child(5) {
+        margin-left: -20%;
+      }
+
+      &:nth-child(7) {
+        margin-left: 20%;
+      }
+    }
+  }
+}
+
+.launch {
+  @extend h3;
+  justify-content: center;
+  display: flex;
+  margin: $spacer*2 auto $spacer*3;
+  text-align: center;
+
+  a {
+    @include link-underline();
+  }
+}
+
+.next-project {
+  background: $gray;
+  margin-top: $spacer*2;
+  padding: $spacer*2.4 $spacer*3 $spacer*3;
+  text-align: right;
+  width: 100%;
+
+  a {
+    @include link-underline();
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacer*5 $spacer*2;
+    text-align: center;
+  }
+}
