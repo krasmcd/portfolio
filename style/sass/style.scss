@@ -1,0 +1,838 @@
+$black:#111;
+$gray-light: #F8F8F8;
+$gray: #232323;
+$pink: #F17682;
+$dsg: #009f42;
+$red: #ed5d43;
+$yellow: #FEE42E;
+$blue: #009BDE;
+$blue-internal: #5d9ab9;
+$link: lighten(#f03745, 30%);
+$link-hover: darken($pink, 5%);
+
+//$headline-font: 'Source Serif Pro', sans-serif;
+
+$headline-font: 'Work Sans', Helvetica, sans-serif;
+$body-font: 'Merriweather', Georgia, serif;
+
+$spacer: 4%;
+$width-HD: 1800px;
+$width-lg: 1200px;
+$mobile: 740px;
+$benefit-max-height: 680px;
+
+
+@mixin project-style($size: full, $color: $black, $text-position: top-left) {
+  @if $size == "full" {
+    flex-basis: 100%;
+  } @else if $size == "half" {
+    flex-basis: 48%;
+  } @else if $size == "medium" {
+    flex-basis: 64%;
+  } @else if $size == "small" {
+    flex-basis: 32%;
+
+    h3 {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-basis: 100%;
+  }
+
+  h3 {
+    color: $color;
+
+    @media (max-width: $mobile) {
+      align-self: center;
+      text-align: center;
+    }
+
+    @if $text-position == "top-left" {
+      align-self: auto;
+    } @else if $text-position == "center" {
+      align-self: center;
+      text-align: center;
+    }
+  }
+}
+
+@mixin link-underline(){
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:after {
+    background: $link;
+    content: ' ';
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -40%;
+    transition: all 0.3s ease;
+
+    @media (max-width: $mobile){
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $link-hover;
+
+    &:after {
+      background: $link-hover;
+      bottom: -15%;
+    }
+  }
+}
+
+@mixin center-content() {
+  margin: 0 auto;
+  max-width: $width-lg;
+  padding: 0 $spacer;
+}
+
+@mixin right-align-benefit() {
+  .img-container {
+    position: absolute;
+    right: 0;
+
+    img {
+      float: right;
+      @media (max-width: $mobile) {float: none;}
+    }
+
+    @media (max-width: $mobile) {
+      position: relative;
+    }
+  }
+}
+
+@mixin svg-benefit($width: 66%, $margin-right: 15%) {
+  .img-container img {
+    float: right;
+    margin-right: $margin-right;
+    width: $width;
+
+    @media (max-width: $mobile) {
+      display: block;
+      float: none;
+      margin: auto;
+    }
+  }
+}
+/*
+@mixin img-background-color($width, $color){
+  &:before {
+    background: $color;
+    content: ' ';
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: $width;
+    z-index: -1;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+*/
+//***** GLOBAL STYLES *****
+
+* {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, ul, li {
+  font-family: $headline-font;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $gray-light;
+
+  &.bg-white {
+    background: #FFF;
+  }
+}
+
+h1 {
+  color: #FFF;
+  font-size: 8vw;
+  text-shadow: 0 1px 10px rgba(25,25,25,.2);
+
+  @media (max-width: $mobile) {
+    font-size: 2.8em;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 110px;
+  }
+}
+
+h1, h2 {
+  letter-spacing: -.03em;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.4em;
+
+  @media (max-width: $mobile){
+    font-size: 1.6em;
+  }
+}
+
+h3 {
+  font-size: 2em;
+
+  @media (max-width: $mobile) {
+    font-size: 1.6em;
+  }
+}
+
+h4 {
+  line-height: 150%;
+}
+
+h4, p, ul > li {
+  font-weight: 300;
+}
+
+h4, li {
+  color: $gray-light;
+  font-size: 1.6em;
+
+  @media (max-width: $mobile) {
+    font-size: 1.4em;
+  }
+}
+
+p {
+  color: lighten($gray, 40%);
+  font-size: 1.3em;
+  line-height: 140%;
+
+  @media (max-width: $mobile) {
+    font-size: 1.1em;
+  }
+}
+
+ul {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+
+  a {
+    @include link-underline();
+  }
+}
+
+a {
+  color: $link;
+  outline: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $link-hover;
+    cursor: pointer;
+  }
+}
+
+footer {
+  @include center-content();
+  margin-bottom: $spacer*2;
+
+  @media (max-width: $mobile) {
+    padding: $spacer*2 $spacer/2 $spacer/2;
+  }
+
+  h4, ul {
+    margin: $spacer*2 0 $spacer*2;
+    width: 50%;
+
+    @media (max-width: $mobile) {
+      margin: $spacer*2 auto;
+      width: 84%;
+    }
+  }
+
+  h4:nth-of-type(2) {
+    margin: 0 0 $spacer*2;
+  }
+
+  ul {
+    @media (max-width: $mobile) {
+      margin-top: $spacer*4;
+    }
+
+    li {
+      margin-top: $spacer*3;
+
+      @media(min-width: $mobile) {
+        display: inline-block;
+        margin-top: 0;
+
+        &:not(:first-child) {
+          margin-left: $spacer*2;
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 92vh;
+  max-height: 900px;
+
+  @media (max-width: $mobile) {
+    height: 80vh;
+    padding-left: 2%;
+  }
+
+  .headline {
+    @include center-content;
+  }
+
+  &:not(.home) {
+    @media (min-width: $width-lg+100) {
+      .headline {
+        max-width: none;
+      }
+    }
+  }
+}
+
+.logo {
+  $logo-size: 40px;
+  opacity: .45;
+  position: absolute;
+  top: $logo-size;
+  left: $logo-size;
+  width: $logo-size;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: $mobile) {
+    $logo-size: 24px;
+    top: $logo-size;
+    left: $logo-size;
+    width: $logo-size;
+  }
+}
+
+// ***** INDEX STYLES *****
+
+body {
+  &.dark-bg {
+    background: $black;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @include center-content();
+
+  @media (max-width: $mobile) {
+    padding: 0 0 $spacer*3;
+  }
+
+  p {
+    margin: -$spacer 0 $spacer/2;
+
+    @media (max-width: $mobile) {
+      margin: -$spacer 0 $spacer $spacer;
+    }
+  }
+
+  .project {
+    display: flex;
+    height: 320px;
+    margin-bottom: $spacer;
+    position: relative;
+    transition: .5s;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $spacer/2;
+    }
+
+    a {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+
+    h3 {
+      margin-top: -2%;
+      padding: 36px;
+
+      @media (max-width: $mobile) {
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    &.partner-portal {
+      @include project-style(full, #FFF);
+      background: lighten($blue, 6%) url('img/home_project_partner-portal.png') no-repeat right;
+
+
+      &:hover {
+        background: $blue url('img/home_project_partner-portal.png') no-repeat right;
+      }
+
+      @media (max-width: 970px) {
+        background: $blue url('img/home_project_partner-portal-MOBILE.png') no-repeat right;
+
+        &:hover {
+          background: darken($blue, 5%) url('img/home_project_partner-portal-MOBILE.png') no-repeat right;
+        }
+      }
+
+      h3 {
+        font-size: 2.7em;
+        width: 60%;
+
+        @media (max-width: $mobile) {
+          font-size: 1.6em;
+          width: 100%;
+        }
+      }
+    }
+
+    &.onboarding {
+      @include project-style(medium);
+      background: lighten($yellow, 10%) url('img/home_project_onboarding.png') no-repeat;
+      background-position: 120% 150%;
+
+      @media (max-width: $mobile) {
+        background-position: 300% 150%;
+        background-position-x: 113px;
+      }
+
+      &:hover {
+        background-color: darken($yellow, 1%);
+      }
+
+      h3 {
+        width: 74%;
+
+        @media (max-width: $mobile) {
+          width: 100%;
+        }
+      }
+    }
+
+    &.internal-tools {
+      @include project-style(small, #FFF, center);
+      background: $blue-internal url('img/home_project_ibotta-internal.svg');
+      background-size: 150%;
+
+      &:hover {
+        background-color: darken($blue-internal, 5%);
+      }
+    }
+
+    &.ibotta-web {
+      @include project-style(small, #FFF, center);
+      background: lighten($pink, 7%) url('img/home_project_ibotta-web.png') no-repeat center;
+      background-size: cover;
+
+      &:hover {
+        background-color: $pink;
+      }
+
+      a {width: 100%;}
+    }
+
+    &.plink-analytics {
+      @include project-style(medium, #FFF);
+      background: lighten($red, 2%) url('img/home_project_plink-analytics.png') no-repeat 90% 20%;
+
+      @media (max-width: $mobile) {
+        background: lighten($red, 2%) url('img/projects/plink-analytics/plinkanal_feature.png') no-repeat 50% 20%;
+      }
+
+      a {width: 100%;}
+
+      h3 {
+        max-width: 320px;
+        width: 50%;
+
+        @media (max-width: $mobile) {
+          max-width: none;
+          width: 100%;
+        }
+      }
+
+      &:hover {
+        background-color: darken($red, 4%);
+      }
+    }
+
+    &.dsg {
+      @include project-style(medium, #FFF, center);
+      background: $dsg;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        background: darken($dsg, 5%);
+      }
+
+      &:after {
+        background: url('img/home_project_dsg.jpg') no-repeat center;
+        background-size: cover;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.09;
+      }
+
+      a {
+        width: 100%;
+        z-index: 5;
+      }
+
+      h3 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//***** PROJECT PAGE STYLES *****
+
+.project-intro {
+  @extend .intro;
+
+  &.partner-portal {
+    background: $blue url('img/projects/partner-portal/feature.png') no-repeat bottom;
+    background-size: contain;
+  }
+
+  &.onboarding {
+    background: $yellow url('img/projects/onboarding/feature.svg') no-repeat 100% 50%;
+    background-size: 100%;
+
+    h1 {color: $gray;}
+    .logo {
+      fill: $gray;
+    }
+  }
+
+  &.ibotta-web {
+    background: $pink url('img/projects/ibotta-web/feature-notes.png') no-repeat center;
+    background-size: cover;
+  }
+
+  &.ibotta-internal {
+    background: $blue-internal url('img/home_project_ibotta-internal.svg') 0% 10%;
+    background-size: 90%;
+  }
+
+  &.plink-analytics {
+    background: $red url('img/projects/plink-analytics/plinkanal_feature.png') no-repeat center;
+    background-size: 33%;
+
+    @media (max-width: $mobile) {
+      background-size: auto;
+    }
+  }
+
+  &.dsg {
+    background: url('img/projects/dsg/feature.jpg') no-repeat center;
+    background-size: cover;
+
+    h1 {
+      text-shadow: 0 1px 25px rgba(12,12,12,.8);
+    }
+  }
+}
+
+.project-details {
+  @include center-content();
+  display: flex;
+  flex-basis: 100%;
+  margin: $spacer*3 auto;
+
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+    padding: 0 $spacer*2;
+    margin: $spacer*3 auto $spacer*6;
+  }
+
+  @media (min-width: $width-lg){
+    padding: 0 $spacer*2.5;
+    margin: $spacer*2 auto;
+    max-width: none;
+  }
+
+  ul {
+    color: $gray;
+
+    &:first-of-type {
+      margin:0 $spacer*2 $spacer 0;
+      max-width: 60%;
+
+      @media (max-width: $mobile) {
+        margin: 0 0 $spacer*3;
+        max-width: none;
+      }
+    }
+
+    &:last-of-type {
+      flex-shrink: 0;
+    }
+  }
+
+  li {
+    color: $gray;
+    line-height: 150%;
+
+    @media (max-width: $mobile) {
+      font-size: 1.2em;
+      line-height: 125%;
+    }
+
+    &:first-child{
+      font-size: 1.2em;
+      font-weight: 500;
+      opacity: .4;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.benefit {
+  align-items: center;
+  display: flex;
+  flex: 1 0 100%;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: auto;
+  max-height: $benefit-max-height;
+  max-width: $width-lg;
+
+
+  .description, .img-container {
+    width: 50%;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $spacer;
+      width: 100%;
+    }
+  }
+
+  &.horizontal {
+    height: auto;
+    margin-bottom: $spacer*2;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $spacer*5;
+    }
+
+    .description, .img-container {
+      text-align: center;
+      width: 100%;
+
+      @media (max-width: $mobile) {
+        text-align: left;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    height: auto;
+    margin: $spacer auto $spacer*5;
+  }
+
+  @media (min-width: $width-lg){
+    max-height: 90vh;
+    max-width: none;
+    padding: $spacer*1.5;
+  }
+
+  .description {
+    padding: $spacer;
+
+    p {
+      margin-top: .4em;
+      font-weight: 300;
+    }
+
+    span {
+      color: $gray;
+      font-weight: 500;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacer $spacer*2;
+    }
+
+    @media (min-width: $width-lg){
+      font-size: 120%;
+    }
+
+    @media (min-width: $width-HD) {
+      font-size: 145%;
+    }
+  }
+
+  .img-container {
+    img {
+      display: block;
+      overflow: hidden;
+      margin: auto;
+      max-width: 100%;
+      max-height: $benefit-max-height;
+
+      @media (min-width: $width-lg) {
+        max-height: 90vh;
+      }
+    }
+  }
+
+  &.partner-portal {
+
+    &.bottleneck {
+      @include svg-benefit(70%, 10%);
+    }
+
+    &.content-approval, &.analytics, &.alerts {
+      @include right-align-benefit();
+    }
+
+    &.progress {
+      @include svg-benefit();
+    }
+  }
+
+  &.onboarding {
+    &.wireframe {
+      @include svg-benefit(80%, 10%);
+    }
+
+    &.result {
+      @include svg-benefit(60%, 20%);
+    }
+  }
+
+  &.ibotta-web {
+    &.roadblock, &.responsive, &.redesign {
+      @include right-align-benefit();
+    }
+  }
+
+  &.ibotta-internal {
+    &.poc, &.pattern {
+      @include right-align-benefit();
+    }
+
+    &.tools {
+      @include svg-benefit(90%, 5%);
+    }
+  }
+}
+
+.imgs-centered {
+  display: block;
+  margin: auto;
+  max-width: 876px;
+  width: 90%;
+
+  img {
+    margin: $spacer auto;
+    max-width: 100%;
+
+    &:last-of-type {
+      margin-bottom: $spacer*4;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &.dsg {
+    @media (max-width: $mobile) {
+      overflow: hidden;
+      padding: 0 5%;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: auto;
+
+      &:first-child {
+        margin-bottom: -25%;
+        margin-left: -10%;
+      }
+
+      &:nth-child(2) {
+        margin-left: 30%;
+      }
+
+      &:nth-child(5) {
+        margin-left: -20%;
+      }
+
+      &:nth-child(7) {
+        margin-left: 20%;
+      }
+    }
+  }
+}
+
+.launch {
+  @extend h3;
+  justify-content: center;
+  display: flex;
+  margin: $spacer*2 auto $spacer*3;
+  text-align: center;
+
+  a {
+    @include link-underline();
+  }
+}
+
+.next-project {
+  background: $gray;
+  margin-top: $spacer*2;
+  padding: $spacer*2.4 $spacer*3 $spacer*3;
+  text-align: right;
+  width: 100%;
+
+  a {
+    @include link-underline();
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacer*5 $spacer*2;
+    text-align: center;
+  }
+}
