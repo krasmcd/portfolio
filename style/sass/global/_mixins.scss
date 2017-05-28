@@ -1,0 +1,102 @@
+@mixin project-style($size: full, $color: $black, $text-position: top-left) {
+  @if $size == "full" {
+    flex-basis: 100%;
+  } @else if $size == "half" {
+    flex-basis: 48%;
+  } @else if $size == "medium" {
+    flex-basis: 64%;
+  } @else if $size == "small" {
+    flex-basis: 32%;
+
+    h3 {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-basis: 100%;
+  }
+
+  h3 {
+    color: $color;
+
+    @media (max-width: $mobile) {
+      align-self: center;
+      text-align: center;
+    }
+
+    @if $text-position == "top-left" {
+      align-self: auto;
+    } @else if $text-position == "center" {
+      align-self: center;
+      text-align: center;
+    }
+  }
+}
+
+@mixin link-underline(){
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:after {
+    background: $link;
+    content: ' ';
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -40%;
+    transition: all 0.3s ease;
+
+    @media (max-width: $mobile){
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $link-hover;
+
+    &:after {
+      background: $link-hover;
+      bottom: -15%;
+    }
+  }
+}
+
+@mixin center-content() {
+  margin: 0 auto;
+  max-width: $width-lg;
+  padding: 0 $spacer;
+}
+
+@mixin right-align-benefit() {
+  .img-container {
+    position: absolute;
+    right: 0;
+
+    img {
+      float: right;
+      @media (max-width: $mobile) {float: none;}
+    }
+
+    @media (max-width: $mobile) {
+      position: relative;
+    }
+  }
+}
+
+@mixin svg-benefit($width: 66%, $margin-right: 15%) {
+  .img-container img {
+    float: right;
+    margin-right: $margin-right;
+    width: $width;
+
+    @media (max-width: $mobile) {
+      display: block;
+      float: none;
+      margin: auto;
+    }
+  }
+}

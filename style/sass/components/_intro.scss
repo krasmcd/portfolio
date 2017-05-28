@@ -1,0 +1,24 @@
+.intro {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 92vh;
+  max-height: 900px;
+
+  @media (max-width: $mobile) {
+    height: 80vh;
+    padding-left: 2%;
+  }
+
+  .headline {
+    @include center-content;
+  }
+
+  &:not(.home) {
+    @media (min-width: $width-lg+100) {
+      .headline {
+        max-width: none;
+      }
+    }
+  }
+}

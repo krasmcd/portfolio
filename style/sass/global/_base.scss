@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $gray-light;
+
+  &.bg-white {
+    background: #FFF;
+  }
+}
+
+ul {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+
+  a {
+    @include link-underline();
+  }
+}
+
+a {
+  color: $link;
+  outline: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $link-hover;
+    cursor: pointer;
+  }
+}
