@@ -3,11 +3,12 @@ body, h1, h2, h3, .launch, h4, p, ul, li {
 
 h1 {
   color: #FFF;
-  font-size: 8vw;
-  text-shadow: 0 1px 10px rgba(25, 25, 25, 0.2); }
+  font-size: 6vw;
+  text-shadow: 0 1px 10px rgba(25, 25, 25, 0.2);
+  line-height: 1; }
   @media (max-width: 740px) {
     h1 {
-      font-size: 2.8em; } }
+      font-size: 2.4em; } }
   @media (min-width: 1200px) {
     h1 {
       font-size: 110px; } }
@@ -146,7 +147,7 @@ footer {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 92vh;
+  height: 96vh;
   max-height: 900px; }
   @media (max-width: 740px) {
     .intro, .project-intro {
@@ -156,6 +157,17 @@ footer {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 4%; }
+    .intro .headline span, .project-intro .headline span {
+      color: #fff299; }
+    .intro .headline h3, .project-intro .headline h3, .intro .headline .launch, .project-intro .headline .launch {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 2.4vw;
+      font-weight: 300;
+      margin-top: 7%; }
+      @media (max-width: 740px) {
+        .intro .headline h3, .project-intro .headline h3, .intro .headline .launch, .project-intro .headline .launch {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 1.2em; } }
   @media (min-width: 1300px) {
     .intro:not(.home) .headline, .project-intro:not(.home) .headline {
       max-width: none; } }
@@ -220,11 +232,9 @@ body.dark-bg {
           .projects .project.partner-portal:hover {
             background: #0089c5 url("../../img/home_project_partner-portal-MOBILE.png") no-repeat right; } }
       .projects .project.partner-portal h3, .projects .project.partner-portal .launch {
-        font-size: 2.7em;
         width: 60%; }
         @media (max-width: 740px) {
           .projects .project.partner-portal h3, .projects .project.partner-portal .launch {
-            font-size: 1.6em;
             width: 100%; } }
     .projects .project.onboarding {
       flex-basis: 64%;
@@ -409,7 +419,8 @@ body.dark-bg {
           margin: 0 0 12%;
           max-width: none; } }
     .project-details ul:last-of-type {
-      flex-shrink: 0; }
+      flex-shrink: 0;
+      font-size: .7em; }
   .project-details li {
     color: #232323;
     line-height: 150%; }
@@ -417,8 +428,8 @@ body.dark-bg {
       .project-details li {
         font-size: 1.2em;
         line-height: 125%; } }
-    .project-details li:first-child {
-      font-size: 1.2em;
+    .project-details li.list-label {
+      font-size: 14px;
       font-weight: 500;
       opacity: .4;
       text-transform: uppercase; }

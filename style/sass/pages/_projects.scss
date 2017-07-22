@@ -78,6 +78,7 @@
 
     &:last-of-type {
       flex-shrink: 0;
+      font-size: .7em;
     }
   }
 
@@ -90,8 +91,8 @@
       line-height: 125%;
     }
 
-    &:first-child{
-      font-size: 1.2em;
+    &.list-label {
+      font-size: 14px;
       font-weight: 500;
       opacity: .4;
       text-transform: uppercase;
