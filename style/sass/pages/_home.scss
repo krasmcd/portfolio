@@ -14,14 +14,6 @@ body {
     padding: 0 0 $spacer*3;
   }
 
-  p {
-    margin: -$spacer 0 $spacer/2;
-
-    @media (max-width: $mobile) {
-      margin: -$spacer 0 $spacer $spacer;
-    }
-  }
-
   .project {
     display: flex;
     height: 320px;

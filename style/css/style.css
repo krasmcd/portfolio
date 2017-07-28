@@ -3,15 +3,12 @@ body, h1, h2, h3, .launch, h4, p, ul, li {
 
 h1 {
   color: #FFF;
-  font-size: 6vw;
+  font-size: 4.4vw;
   text-shadow: 0 1px 10px rgba(25, 25, 25, 0.2);
   line-height: 1; }
   @media (max-width: 740px) {
     h1 {
       font-size: 2.4em; } }
-  @media (min-width: 1200px) {
-    h1 {
-      font-size: 110px; } }
 
 h1, h2 {
   letter-spacing: -.03em; }
@@ -108,7 +105,7 @@ footer {
     footer {
       padding: 8% 2% 2%; } }
   footer h4, footer ul {
-    margin: 8% 0 8%;
+    margin: 8% 0 8% auto;
     width: 50%; }
     @media (max-width: 740px) {
       footer h4, footer ul {
@@ -147,30 +144,27 @@ footer {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 96vh;
-  max-height: 900px; }
+  height: 100vh;
+  max-height: 900px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 4%; }
   @media (max-width: 740px) {
     .intro, .project-intro {
       height: 80vh;
       padding-left: 2%; } }
   .intro .headline, .project-intro .headline {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 4%; }
-    .intro .headline span, .project-intro .headline span {
-      color: #fff299; }
-    .intro .headline h3, .project-intro .headline h3, .intro .headline .launch, .project-intro .headline .launch {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 2.4vw;
-      font-weight: 300;
-      margin-top: 7%; }
-      @media (max-width: 740px) {
-        .intro .headline h3, .project-intro .headline h3, .intro .headline .launch, .project-intro .headline .launch {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 1.2em; } }
-  @media (min-width: 1300px) {
-    .intro:not(.home) .headline, .project-intro:not(.home) .headline {
-      max-width: none; } }
+    position: relative; }
+  .intro.home .headline span, .home.project-intro .headline span {
+    color: #fff299; }
+  .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
+    color: #FFFFFF;
+    font-size: 2vw;
+    font-weight: 300;
+    margin-top: 4%; }
+    @media (max-width: 740px) {
+      .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
+        font-size: 1.2em; } }
 
 body.dark-bg {
   background: #242528; }
@@ -185,11 +179,6 @@ body.dark-bg {
   @media (max-width: 740px) {
     .projects {
       padding: 0 0 12%; } }
-  .projects p {
-    margin: -4% 0 2%; }
-    @media (max-width: 740px) {
-      .projects p {
-        margin: -4% 0 4% 4%; } }
   .projects .project {
     display: flex;
     height: 320px;
@@ -364,33 +353,35 @@ body.dark-bg {
       .projects .project.dsg h3, .projects .project.dsg .launch {
         width: 100%; }
 
-.project-intro.partner-portal {
-  background: #009bde url("../../img/projects/partner-portal/feature.png") no-repeat bottom;
-  background-size: contain; }
-.project-intro.onboarding {
-  background: #fee42e url("../../img/projects/onboarding/feature.svg") no-repeat 100% 50%;
-  background-size: 100%; }
-  .project-intro.onboarding h1 {
-    color: #232323; }
-  .project-intro.onboarding .logo {
-    fill: #232323; }
-.project-intro.ibotta-web {
-  background: #f17682 url("../../img/projects/ibotta-web/feature-notes.png") no-repeat center;
-  background-size: cover; }
-.project-intro.ibotta-internal {
-  background: #5d9ab9 url("../../img/home_project_ibotta-internal.svg") 0% 10%;
-  background-size: 90%; }
-.project-intro.plink-analytics {
-  background: #ed5d43 url("../../img/projects/plink-analytics/plinkanal_feature.png") no-repeat center;
-  background-size: 33%; }
-  @media (max-width: 740px) {
-    .project-intro.plink-analytics {
-      background-size: auto; } }
-.project-intro.dsg {
-  background: url("../../img/projects/dsg/feature.jpg") no-repeat center;
-  background-size: cover; }
-  .project-intro.dsg h1 {
-    text-shadow: 0 1px 25px rgba(12, 12, 12, 0.8); }
+.project-intro {
+  max-width: none; }
+  .project-intro.partner-portal {
+    background: #009bde url("../../img/projects/partner-portal/feature.png") no-repeat bottom;
+    background-size: contain; }
+  .project-intro.onboarding {
+    background: #fee42e url("../../img/projects/onboarding/feature.svg") no-repeat 100% 50%;
+    background-size: 100%; }
+    .project-intro.onboarding h1 {
+      color: #232323; }
+    .project-intro.onboarding .logo {
+      fill: #232323; }
+  .project-intro.ibotta-web {
+    background: #f17682 url("../../img/projects/ibotta-web/feature-notes.png") no-repeat center;
+    background-size: cover; }
+  .project-intro.ibotta-internal {
+    background: #5d9ab9 url("../../img/home_project_ibotta-internal.svg") 0% 10%;
+    background-size: 90%; }
+  .project-intro.plink-analytics {
+    background: #ed5d43 url("../../img/projects/plink-analytics/plinkanal_feature.png") no-repeat center;
+    background-size: 33%; }
+    @media (max-width: 740px) {
+      .project-intro.plink-analytics {
+        background-size: auto; } }
+  .project-intro.dsg {
+    background: url("../../img/projects/dsg/feature.jpg") no-repeat center;
+    background-size: cover; }
+    .project-intro.dsg h1 {
+      text-shadow: 0 1px 25px rgba(12, 12, 12, 0.8); }
 
 .project-details {
   margin: 0 auto;

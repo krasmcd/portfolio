@@ -2,8 +2,9 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 96vh;
+  height: 100vh;
   max-height: 900px;
+  @include center-content();
 
   @media (max-width: $mobile) {
     height: 80vh;
@@ -11,29 +12,23 @@
   }
 
   .headline {
-    @include center-content;
+    position: relative;
+  }
+
+  &.home .headline {
 
     span {
       color: lighten($yellow, 21%);
     }
 
     h3 {
-      color: rgba(255,255,255,.7);
-      font-size: 2.4vw;
+      color: #FFFFFF;
+      font-size: 2vw;
       font-weight: 300;
-      margin-top: 7%;
+      margin-top: $spacer;
 
       @media (max-width: $mobile) {
-        color: rgba(255,255,255,.8);
         font-size: 1.2em;
-      }
-    }
-  }
-
-  &:not(.home) {
-    @media (min-width: $width-lg+100) {
-      .headline {
-        max-width: none;
       }
     }
   }

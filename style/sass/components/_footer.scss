@@ -7,7 +7,7 @@ footer {
   }
 
   h4, ul {
-    margin: $spacer*2 0 $spacer*2;
+    margin: $spacer*2 0 $spacer*2 auto;
     width: 50%;
 
     @media (max-width: $mobile) {

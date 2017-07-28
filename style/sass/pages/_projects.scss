@@ -1,5 +1,6 @@
 .project-intro {
   @extend .intro;
+  max-width: none;
 
   &.partner-portal {
     background: $blue url('../../img/projects/partner-portal/feature.png') no-repeat bottom;
