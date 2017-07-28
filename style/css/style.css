@@ -8,7 +8,7 @@ h1 {
   line-height: 1; }
   @media (max-width: 740px) {
     h1 {
-      font-size: 2.4em; } }
+      font-size: 2em; } }
 
 h1, h2 {
   letter-spacing: -.03em; }
@@ -35,7 +35,7 @@ h4, p, ul > li {
   font-weight: 300; }
 
 h4, li {
-  color: #f8f8f8;
+  color: #F8F8F8;
   font-size: 1.6em; }
   @media (max-width: 740px) {
     h4, li {
@@ -57,7 +57,7 @@ body, h1, h2, h3, .launch, h4, p, ul, li {
   padding: 0; }
 
 body {
-  background: #f8f8f8; }
+  background: #F8F8F8; }
   body.bg-white {
     background: #FFF; }
 
@@ -70,7 +70,7 @@ ul {
     transition: all 0.3s ease;
     text-align: center; }
     ul a:after {
-      background: #ffe9af;
+      background: #FFE9AF;
       content: ' ';
       display: block;
       height: 2px;
@@ -82,18 +82,18 @@ ul {
         ul a:after {
           display: none; } }
     ul a:hover {
-      color: #ffd462; }
+      color: #ffd463; }
       ul a:hover:after {
-        background: #ffd462;
+        background: #ffd463;
         bottom: -15%; }
 
 a {
-  color: #ffe9af;
+  color: #FFE9AF;
   outline: 0;
   text-decoration: none;
   transition: all 0.3s ease; }
   a:hover {
-    color: #ffd462;
+    color: #ffd463;
     cursor: pointer; }
 
 footer {
@@ -151,8 +151,8 @@ footer {
   padding: 0 4%; }
   @media (max-width: 740px) {
     .intro, .project-intro {
-      height: 80vh;
-      padding-left: 2%; } }
+      height: 84vh;
+      padding: 0 6%; } }
   .intro .headline, .project-intro .headline {
     position: relative; }
   .intro.home .headline span, .home.project-intro .headline span {
@@ -207,17 +207,17 @@ body.dark-bg {
         .projects .project.partner-portal {
           flex-basis: 100%; } }
       .projects .project.partner-portal h3, .projects .project.partner-portal .launch {
-        color: white;
+        color: #FFF;
         align-self: auto; }
         @media (max-width: 740px) {
           .projects .project.partner-portal h3, .projects .project.partner-portal .launch {
             align-self: center;
             text-align: center; } }
       .projects .project.partner-portal:hover {
-        background: #009bde url("../../img/home_project_partner-portal.png") no-repeat right; }
+        background: #009BDE url("../../img/home_project_partner-portal.png") no-repeat right; }
       @media (max-width: 970px) {
         .projects .project.partner-portal {
-          background: #009bde url("../../img/home_project_partner-portal-MOBILE.png") no-repeat right; }
+          background: #009BDE url("../../img/home_project_partner-portal-MOBILE.png") no-repeat right; }
           .projects .project.partner-portal:hover {
             background: #0089c5 url("../../img/home_project_partner-portal-MOBILE.png") no-repeat right; } }
       .projects .project.partner-portal h3, .projects .project.partner-portal .launch {
@@ -260,7 +260,7 @@ body.dark-bg {
         .projects .project.internal-tools {
           flex-basis: 100%; } }
       .projects .project.internal-tools h3, .projects .project.internal-tools .launch {
-        color: white;
+        color: #FFF;
         align-self: center;
         text-align: center; }
         @media (max-width: 740px) {
@@ -279,7 +279,7 @@ body.dark-bg {
         .projects .project.ibotta-web {
           flex-basis: 100%; } }
       .projects .project.ibotta-web h3, .projects .project.ibotta-web .launch {
-        color: white;
+        color: #FFF;
         align-self: center;
         text-align: center; }
         @media (max-width: 740px) {
@@ -287,7 +287,7 @@ body.dark-bg {
             align-self: center;
             text-align: center; } }
       .projects .project.ibotta-web:hover {
-        background-color: #f17682; }
+        background-color: #F17682; }
       .projects .project.ibotta-web a {
         width: 100%; }
     .projects .project.plink-analytics {
@@ -297,7 +297,7 @@ body.dark-bg {
         .projects .project.plink-analytics {
           flex-basis: 100%; } }
       .projects .project.plink-analytics h3, .projects .project.plink-analytics .launch {
-        color: white;
+        color: #FFF;
         align-self: auto; }
         @media (max-width: 740px) {
           .projects .project.plink-analytics h3, .projects .project.plink-analytics .launch {
@@ -326,7 +326,7 @@ body.dark-bg {
         .projects .project.dsg {
           flex-basis: 100%; } }
       .projects .project.dsg h3, .projects .project.dsg .launch {
-        color: white;
+        color: #FFF;
         align-self: center;
         text-align: center; }
         @media (max-width: 740px) {
@@ -356,17 +356,17 @@ body.dark-bg {
 .project-intro {
   max-width: none; }
   .project-intro.partner-portal {
-    background: #009bde url("../../img/projects/partner-portal/feature.png") no-repeat bottom;
+    background: #009BDE url("../../img/projects/partner-portal/feature.png") no-repeat bottom;
     background-size: contain; }
   .project-intro.onboarding {
-    background: #fee42e url("../../img/projects/onboarding/feature.svg") no-repeat 100% 50%;
+    background: #FEE42E url("../../img/projects/onboarding/feature.svg") no-repeat 100% 50%;
     background-size: 100%; }
     .project-intro.onboarding h1 {
       color: #232323; }
     .project-intro.onboarding .logo {
       fill: #232323; }
   .project-intro.ibotta-web {
-    background: #f17682 url("../../img/projects/ibotta-web/feature-notes.png") no-repeat center;
+    background: #F17682 url("../../img/projects/ibotta-web/feature-notes.png") no-repeat center;
     background-size: cover; }
   .project-intro.ibotta-internal {
     background: #5d9ab9 url("../../img/home_project_ibotta-internal.svg") 0% 10%;
@@ -607,7 +607,7 @@ body.dark-bg {
     transition: all 0.3s ease;
     text-align: center; }
     .launch a:after {
-      background: #ffe9af;
+      background: #FFE9AF;
       content: ' ';
       display: block;
       height: 2px;
@@ -619,9 +619,9 @@ body.dark-bg {
         .launch a:after {
           display: none; } }
     .launch a:hover {
-      color: #ffd462; }
+      color: #ffd463; }
       .launch a:hover:after {
-        background: #ffd462;
+        background: #ffd463;
         bottom: -15%; }
 
 .next-project {
@@ -636,7 +636,7 @@ body.dark-bg {
     transition: all 0.3s ease;
     text-align: center; }
     .next-project a:after {
-      background: #ffe9af;
+      background: #FFE9AF;
       content: ' ';
       display: block;
       height: 2px;
@@ -648,11 +648,13 @@ body.dark-bg {
         .next-project a:after {
           display: none; } }
     .next-project a:hover {
-      color: #ffd462; }
+      color: #ffd463; }
       .next-project a:hover:after {
-        background: #ffd462;
+        background: #ffd463;
         bottom: -15%; }
   @media (max-width: 740px) {
     .next-project {
       padding: 20% 8%;
       text-align: center; } }
+
+/*# sourceMappingURL=style.css.map */

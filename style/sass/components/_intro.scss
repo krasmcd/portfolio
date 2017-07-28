@@ -7,7 +7,8 @@
   @include center-content();
 
   @media (max-width: $mobile) {
-    height: 80vh;
+    height: 84vh;
+    padding: 0 $spacer*1.5;
   }
 
   .headline {
