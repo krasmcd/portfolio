@@ -15,8 +15,6 @@
   }
 
   &.home .headline {
-    margin-top: -$spacer*4;
-
     span {
       color: $yellow-light;
     }
@@ -30,6 +28,10 @@
       @media (max-width: $mobile) {
         font-size: 1.2em;
       }
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: -$spacer*4;
     }
   }
 
