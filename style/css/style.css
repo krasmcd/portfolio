@@ -183,22 +183,21 @@ footer {
     animation-fill-mode: forwards;
     opacity: 0;
     position: absolute;
-    left: 10%;
+    left: 5.2%;
     bottom: 20%; }
     .intro .arrow:after, .project-intro .arrow:after {
       content: "";
       position: absolute;
-      left: 50%;
       bottom: -32px;
       width: 32px;
       height: 32px;
-      margin-left: -16px;
+      margin-left: 32px;
       border-right: 1px solid #fff299;
       border-bottom: 1px solid #fff299;
       transform: rotate(45deg); }
     @media (max-width: 740px) {
       .intro .arrow, .project-intro .arrow {
-        left: 14%;
+        left: 0;
         bottom: 16%; } }
 
 body.dark-bg {

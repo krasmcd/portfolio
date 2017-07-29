@@ -25,11 +25,10 @@
   &:after {
     content: "";
     position: absolute;
-    left: 50%;
     bottom: -$size;
     width: $size;
     height: $size;
-    margin-left: ($size/2)*-1;
+    margin-left: $size;
     border-right:  $stroke solid $color;
     border-bottom: $stroke solid $color;
 
