@@ -159,16 +159,18 @@ footer {
       padding: 0 6%; } }
   .intro .headline, .project-intro .headline {
     position: relative; }
-  .intro.home .headline span, .home.project-intro .headline span {
-    color: #fff299; }
-  .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
-    color: #FFFFFF;
-    font-size: 2vw;
-    font-weight: 300;
-    margin-top: 4%; }
-    @media (max-width: 740px) {
-      .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
-        font-size: 1.2em; } }
+  .intro.home .headline, .home.project-intro .headline {
+    margin-top: -16%; }
+    .intro.home .headline span, .home.project-intro .headline span {
+      color: #fff299; }
+    .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
+      color: #FFFFFF;
+      font-size: 2vw;
+      font-weight: 300;
+      margin-top: 4%; }
+      @media (max-width: 740px) {
+        .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
+          font-size: 1.2em; } }
   .intro .arrow, .project-intro .arrow {
     position: relative;
     animation: fade-in 1s;
