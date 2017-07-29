@@ -144,6 +144,9 @@ footer {
         margin-top: 0; }
         footer ul li:not(:first-child) {
           margin-left: 8%; } }
+  @media (max-width: 740px) {
+    footer.home {
+      padding: 20% 2% 2%; } }
 
 .intro, .project-intro {
   align-items: center;
