@@ -7,7 +7,6 @@
   @include center-content();
 
   @media (max-width: $mobile) {
-    height: 84vh;
     padding: 0 $spacer*1.5;
   }
 
@@ -18,7 +17,7 @@
   &.home .headline {
 
     span {
-      color: lighten($yellow, 21%);
+      color: $yellow-light;
     }
 
     h3 {
@@ -30,6 +29,24 @@
       @media (max-width: $mobile) {
         font-size: 1.2em;
       }
+    }
+  }
+
+  .arrow {
+    @include arrow(down, $yellow-light);
+    animation: fade-in 1s;
+    animation-delay: 1.25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    position: absolute;
+    left: $spacer*2.5;
+    bottom: $spacer*5;
+
+    @media (max-width: $mobile) {
+      left: $spacer*3.5;
+      bottom: $spacer*4;
     }
   }
 }

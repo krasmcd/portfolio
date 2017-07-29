@@ -1,0 +1,46 @@
+.logo {
+  $logo-size: 40px;
+  opacity: .45;
+  position: absolute;
+  top: $logo-size;
+  left: $logo-size;
+  width: $logo-size;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: $mobile) {
+    $logo-size: 24px;
+    top: $logo-size;
+    left: $logo-size;
+    width: $logo-size;
+  }
+}
+
+@mixin arrow($direction: down, $color: rgba(255,255,255,.45), $size: 32px, $stroke: 1px) {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -$size;
+    width: $size;
+    height: $size;
+    margin-left: ($size/2)*-1;
+    border-right:  $stroke solid $color;
+    border-bottom: $stroke solid $color;
+
+    @if $direction == "down" {
+      transform: rotate(45deg);
+    } @else if $direction == "up" {
+      transform: rotate(225deg);
+    } @else if $direction == "left" {
+      transform: rotate(135deg);
+    } @else if $direction == "right" {
+      transform: rotate(-45deg);
+    }
+  }
+}

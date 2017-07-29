@@ -4,10 +4,11 @@
 @import './global/_mixins';
 @import './global/_typography';
 @import './global/_base';
+@import './global/_shapes';
+@import './global/_animation';
 
 // styles scoped to specific elements
 @import './components/_footer';
-@import './components/_logo';
 @import './components/_intro';
 
 // styles scoped to specific pages
