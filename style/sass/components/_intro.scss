@@ -3,7 +3,6 @@
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
-  max-height: 900px;
   @include center-content();
 
   @media (max-width: $mobile) {
@@ -14,24 +13,28 @@
     position: relative;
   }
 
-  &.home .headline {
-    span {
-      color: $yellow-light;
-    }
+  &.home {
+    position: relative;
 
-    h3 {
-      color: #FFFFFF;
-      font-size: 2vw;
-      font-weight: 300;
-      margin-top: $spacer;
+    .headline {
+      span {
+        color: $yellow-light;
+      }
+
+      h3 {
+        color: #FFFFFF;
+        font-size: 2vw;
+        font-weight: 300;
+        margin-top: $spacer;
+
+        @media (max-width: $mobile) {
+          font-size: 1.2em;
+        }
+      }
 
       @media (max-width: $mobile) {
-        font-size: 1.2em;
+        margin-top: -$spacer*4;
       }
-    }
-
-    @media (max-width: $mobile) {
-      margin-top: -$spacer*4;
     }
   }
 

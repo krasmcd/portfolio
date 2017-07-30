@@ -8,5 +8,5 @@ $yellow: #FEE42E;
 $yellow-light: lighten($yellow, 21%);
 $blue: #009BDE;
 $blue-internal: #5d9ab9;
-$link: #FFE9AF;
+$link: $yellow-light;
 $link-hover: darken($link, 15%);
