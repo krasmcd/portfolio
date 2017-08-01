@@ -1,9 +1,9 @@
 body, h1, h2, h3, .launch, h4, p, ul, li {
-  font-family: "Work Sans", Helvetica, sans-serif; }
+  font-family: "Montserrat", Helvetica, sans-serif; }
 
 h1 {
   color: #FFF;
-  font-size: 4.4vw;
+  font-size: 3.7vw;
   text-shadow: 0 1px 10px rgba(25, 25, 25, 0.2);
   line-height: 1; }
   @media (max-width: 740px) {
@@ -13,7 +13,7 @@ h1 {
 h1, h2 {
   letter-spacing: -.03em; }
 
-h1, h2, h3, .launch {
+h1, h2 {
   font-weight: 500; }
 
 h2 {
@@ -23,7 +23,8 @@ h2 {
       font-size: 1.6em; } }
 
 h3, .launch {
-  font-size: 2em; }
+  font-size: 2em;
+  font-weight: 300; }
   @media (max-width: 740px) {
     h3, .launch {
       font-size: 1.6em; } }
@@ -57,9 +58,7 @@ body, h1, h2, h3, .launch, h4, p, ul, li {
   padding: 0; }
 
 body {
-  background: #F8F8F8; }
-  body.bg-white {
-    background: #FFF; }
+  background: #FFF; }
 
 ul {
   list-style-type: none;
@@ -118,7 +117,7 @@ a {
     opacity: 1; } }
 footer {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 4%;
   margin-bottom: 8%; }
   @media (max-width: 740px) {
@@ -154,7 +153,7 @@ footer {
   flex-wrap: wrap;
   height: 100vh;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 4%; }
   @media (max-width: 740px) {
     .intro, .project-intro {
@@ -167,9 +166,9 @@ footer {
       color: #fff299; }
     .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
       color: #FFFFFF;
-      font-size: 2vw;
+      font-size: 1.6vw;
       font-weight: 300;
-      margin-top: 4%; }
+      margin-top: 2%; }
       @media (max-width: 740px) {
         .intro.home .headline h3, .home.project-intro .headline h3, .intro.home .headline .launch, .home.project-intro .headline .launch {
           font-size: 1.2em; } }
@@ -209,7 +208,7 @@ body.dark-bg {
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 4%; }
   @media (max-width: 740px) {
     .projects {
@@ -390,6 +389,8 @@ body.dark-bg {
 
 .project-intro {
   max-width: none; }
+  .project-intro .headline {
+    margin: auto; }
   .project-intro.partner-portal {
     background: #009BDE url("../../img/projects/partner-portal/feature.png") no-repeat bottom;
     background-size: contain; }
@@ -420,7 +421,7 @@ body.dark-bg {
 
 .project-details {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 4%;
   display: flex;
   flex-basis: 100%;
@@ -430,7 +431,7 @@ body.dark-bg {
       flex-wrap: wrap;
       padding: 0 8%;
       margin: 12% auto 24%; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .project-details {
       padding: 0 10%;
       margin: 8% auto;
@@ -468,7 +469,7 @@ body.dark-bg {
   height: 100vh;
   margin: auto;
   max-height: 680px;
-  max-width: 1200px; }
+  max-width: 1400px; }
   .benefit .description, .benefit .img-container {
     width: 50%; }
     @media (max-width: 740px) {
@@ -491,7 +492,7 @@ body.dark-bg {
     .benefit {
       height: auto;
       margin: 4% auto 20%; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .benefit {
       max-height: 90vh;
       max-width: none;
@@ -507,7 +508,7 @@ body.dark-bg {
     @media (max-width: 740px) {
       .benefit .description {
         padding: 4% 8%; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .benefit .description {
         font-size: 120%; } }
     @media (min-width: 1800px) {
@@ -519,7 +520,7 @@ body.dark-bg {
     margin: auto;
     max-width: 100%;
     max-height: 680px; }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       .benefit .img-container img {
         max-height: 90vh; } }
   .benefit.partner-portal.bottleneck .img-container img {
@@ -691,5 +692,10 @@ body.dark-bg {
     .next-project {
       padding: 20% 8%;
       text-align: center; } }
+  .next-project p {
+    font-size: 1.1em;
+    margin-bottom: .4em; }
+  .next-project h3, .next-project .launch {
+    font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */

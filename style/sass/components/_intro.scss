@@ -23,9 +23,9 @@
 
       h3 {
         color: #FFFFFF;
-        font-size: 2vw;
+        font-size: 1.6vw;
         font-weight: 300;
-        margin-top: $spacer;
+        margin-top: $spacer/2;
 
         @media (max-width: $mobile) {
           font-size: 1.2em;

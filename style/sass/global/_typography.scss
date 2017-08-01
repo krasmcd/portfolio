@@ -1,4 +1,4 @@
-$headline-font: 'Work Sans', Helvetica, sans-serif;
+$headline-font: 'Montserrat', Helvetica, sans-serif;
 $body-font: 'Merriweather', Georgia, serif;
 
 body, h1, h2, h3, h4, p, ul, li {
@@ -7,7 +7,7 @@ body, h1, h2, h3, h4, p, ul, li {
 
 h1 {
   color: #FFF;
-  font-size: 4.4vw;
+  font-size: 3.7vw;
   text-shadow: 0 1px 10px rgba(25,25,25,.2);
   line-height: 1;
 
@@ -20,7 +20,7 @@ h1, h2 {
   letter-spacing: -.03em;
 }
 
-h1, h2, h3 {
+h1, h2, {
   font-weight: 500;
 }
 
@@ -34,6 +34,7 @@ h2 {
 
 h3 {
   font-size: 2em;
+  font-weight: 300;
 
   @media (max-width: $mobile) {
     font-size: 1.6em;

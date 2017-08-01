@@ -8,11 +8,7 @@ body, h1, h2, h3, h4, p, ul, li {
 }
 
 body {
-  background: $gray-light;
-
-  &.bg-white {
-    background: #FFF;
-  }
+  background: #FFF;
 }
 
 ul {
